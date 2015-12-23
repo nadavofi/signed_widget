@@ -1,0 +1,19 @@
+---
+development:
+  cloud_name: abcdefghij
+  api_key: '123456789098765'
+  api_secret: aBcD
+  enhance_image_tag: true
+  static_image_support: false
+production:
+  cloud_name: abcdefghij
+  api_key: '123456789098765'
+  api_secret: aBcD
+  enhance_image_tag: true
+  static_image_support: true
+test:
+  cloud_name: abcdefghij
+  api_key: '123456789098765'
+  api_secret: aBcD
+  enhance_image_tag: true
+  static_image_support: false

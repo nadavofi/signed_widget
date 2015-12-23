@@ -1,0 +1,54 @@
+<script type="text/javascript">
+  var generateSignature = function(callback, data){
+    $.ajax({
+      url     : "<%= posts_generate_signature_path %>", // Route to the Script Controller method
+      type    : "GET",
+      dataType: "text",
+      data    : { data: data}, // This goes to Controller in params hash, i.e. params[:file_name]
+      complete: function() {console.log("complete")},
+      success : function(data, textStatus, xhr) { callback(data); },
+      error   : function(xhr, status, error) { console.log(xhr, status, error); }
+    });
+  }
+</script>
+
+<%= form_for(@post) do |f| %>
+  <% if @post.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@post.errors.count, "error") %> prohibited this post from being saved:</h2>
+
+      <ul>
+      <% @post.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :title %><br>
+    <%= f.text_field :title %>
+  </div>
+  <div class="field">
+    <%= f.label :content %><br>
+    <%= f.text_area :content %>
+  </div>
+  <div class="field">
+    <%= f.label :image %><br>
+    <div id="upload_widget_opener"></div>
+
+    
+          
+    <script type="text/javascript">  
+      $('#upload_widget_opener').cloudinary_upload_widget(
+        { cloud_name: '<%= Cloudinary::config.cloud_name %>', api_key: "<%= Cloudinary::config.api_key %>",
+          cropping: 'server', 'folder': 'post_photos', button_class:'myButton', theme:'minimal',
+          field_name: 'post[image]', upload_signature: generateSignature},
+        function(error, result) { console.log(error, result) });
+    </script>
+  </div>
+</br>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>
