@@ -1,28 +1,14 @@
 == README
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+This sample-project is intended to demonstrate how to utiize the new signed-uploads support with the [Upload-Widget](http://cloudinary.com/documentation/upload_widget).
 
-Things you may want to cover:
+* Download the project
 
-* Ruby version
+* Replace the .YML file with the one carrying your own account's settings (can be downloaded from your account's [dashboard](https://cloudinary.com/console/)).
 
-* System dependencies
+* Start the server
 
-* Configuration
+* Access the server, e.g.:`localhost:3000/` and try it out.
 
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
-
-
-Please feel free to use a different markup language if you do not plan to run
+Please feel free to [contact our support](http://support.cloudinary.com/hc/en-us/requests/new) for every question that arises
 <tt>rake doc:app</tt>.
