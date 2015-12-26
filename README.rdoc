@@ -1,6 +1,6 @@
 == README
 
-This sample-project is intended to demonstrate how to utiize the new signed-uploads support with the <a href="http://cloudinary.com/documentation/upload_widget">Upload-Widget</a>.
+This sample-project is intended to demonstrate how to utiize the new signed-uploads support with the [Upload-Widget](http://cloudinary.com/documentation/upload_widget).
 
 == SETUP STEPS
 
