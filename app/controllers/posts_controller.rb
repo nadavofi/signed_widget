@@ -2,7 +2,6 @@ class PostsController < ApplicationController
   before_action :set_post, only: [:show, :edit, :update, :destroy]
 
   def generate_signature
-    puts "YYYYYYYYYYYYYYY"
     @signature = Cloudinary::Utils.api_sign_request(params[:data], Cloudinary::config.api_secret)
   end
 

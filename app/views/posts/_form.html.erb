@@ -1,12 +1,12 @@
 <script type="text/javascript">
-  var generateSignature = function(callback, data){
+  var generateSignature = function(callback, params_to_sign){
     $.ajax({
       url     : "<%= posts_generate_signature_path %>", // Route to the Script Controller method
       type    : "GET",
       dataType: "text",
-      data    : { data: data}, // This goes to Controller in params hash, i.e. params[:file_name]
+      data    : { data: params_to_sign}, // This goes to Controller in params hash, i.e. params[:file_name]
       complete: function() {console.log("complete")},
-      success : function(data, textStatus, xhr) { callback(data); },
+      success : function(signature, textStatus, xhr) { callback(signature); },
       error   : function(xhr, status, error) { console.log(xhr, status, error); }
     });
   }
