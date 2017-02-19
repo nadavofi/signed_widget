@@ -43,7 +43,7 @@
       $('#upload_widget_opener').cloudinary_upload_widget(
         { cloud_name: '<%= Cloudinary::config.cloud_name %>', api_key: "<%= Cloudinary::config.api_key %>",
           cropping: 'server', 'folder': 'post_photos', button_class:'myButton', theme:'minimal',
-          field_name: 'post[image]', min_image_width: 100, min_image_height: 100, cropping_validate_dimensions: true, upload_signature: generateSignature, max_chunk_size: 6000000, cropping_show_dimensions: true},
+          field_name: 'post[image]', min_image_width: 100, min_image_height: 100, cropping_validate_dimensions: true, upload_signature: generateSignature, max_chunk_size: 6000000, cropping_show_dimensions: true },
         function(error, result) { console.log(error, result) });
     </script>
   </div>
